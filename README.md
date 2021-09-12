@@ -15,7 +15,7 @@ The goal usually is to find out the locations where the phone has been during ce
 ### **Prepare the input data:**
 - The `consolidated.db` database has to be extracted from the iPhone image, then its data can be accessed with SQLite.
     - Example of the data found in the database:
-      ![alt text](Images/consolidated-db.PNG "consolidated.db")
+      ![alt text](Images/consolidated-db.png "consolidated.db")
 
 - This database contains several fields, but for this script we'll only use the `timestamp`, `latitude` and `logitude`. 
 - For simplification purposes those three columns were exported to a `CSV file` in order to work with them in the python script.
