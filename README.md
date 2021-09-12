@@ -47,4 +47,4 @@ Usage:
 
 Example of what the script plots:
 
-![alt text](Images/locations_6_13.PNG "GPS coordinates")
+![alt text](Images/locations_7_10.png "GPS coordinates")

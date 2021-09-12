@@ -10,15 +10,17 @@ if len(sys.argv) != 2:
     raise ValueError('Please provide the name of the CSV file')
  
 #Create a dataframe with the coordinate data from a CSV file
-csvFile = sys.argv[1]
-df = pd.read_csv(csvFile)
+try:
+    csvFile = sys.argv[1]
+    df = pd.read_csv(csvFile)
+except IOError:
+    raise ValueError('Error reading the File')
 
 
+# --- Normalize the timestamp to Unix epoch time ---
 #variables to help us manage the timestamp info and add them to the dataframe
 ts = []
 unixTS = 978307200 
-
-
 #iterate through each row of the dataframe 
 for index, row in df.iterrows():
    
@@ -34,9 +36,9 @@ for index, row in df.iterrows():
         # append a missing value 
         ts.append(np.NaN)
 
-
 #Add the new timestamp (UTC) data to the dataframe
 df['UTC'] = ts
+
 
 
 #Map the data with mapbox
