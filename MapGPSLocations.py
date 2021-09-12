@@ -1,12 +1,16 @@
 
+import sys
 import plotly.express as px
 import pandas as pd
 import numpy as np
 from datetime import datetime
 
-
+#Check the input
+if len(sys.argv) != 2:
+    raise ValueError('Please provide the name of the CSV file')
+ 
 #Create a dataframe with the coordinate data from a CSV file
-csvFile = 'DATA/7_10_2012.txt'
+csvFile = sys.argv[1]
 df = pd.read_csv(csvFile)
 
 
